@@ -93,7 +93,7 @@
 <header id="siteHeader" class="sticky top-0 z-50 bg-[#004A99]">
   <nav class="max-w-[1280px] mx-auto px-6 lg:px-10 flex items-center justify-between">
     <ul id="navList" class="hidden lg:flex items-center text-[14px] text-white">
-      <li><a href="index.html" class="block px-4 py-[18px] font-medium border-b-2 border-white">Utama</a></li>
+      <li><a href="index.html" id="navHome" class="block px-4 py-[18px] font-medium border-b-2 border-transparent">Utama</a></li>
     </ul>
 
     <button id="mobileMenuBtn" class="lg:hidden text-white py-4" aria-label="Buka menu">
@@ -495,7 +495,7 @@
           'Anggota Lembaga Pengarah',
           'Perutusan Ketua Pengarah',
           'Carta Organisasi',
-          'Latar Belakang IKMa',
+          { title: 'Latar Belakang IKMa', href: 'latar-belakang-ikma.html' },
           'Fungsi & Kuasa IKMa',
           { title: 'Visi, Misi & Fungsi IKMa', href: 'visi-misi-fungsi.html' },
           'Kod Etika IKMa',
@@ -651,6 +651,38 @@
     },
   ];
 
+  // Get current page filename
+  let pageName = window.location.pathname.split('/').pop() || 'index.html';
+  if (pageName === '') pageName = 'index.html';
+
+  // Highlight Utama if current page is index.html
+  const navHome = document.getElementById('navHome');
+  if (navHome) {
+    if (pageName === 'index.html') {
+      navHome.classList.add('border-white');
+      navHome.classList.remove('border-transparent');
+    } else {
+      navHome.classList.add('border-transparent');
+      navHome.classList.remove('border-white');
+    }
+  }
+
+  function isCategoryActive(menu, pageName) {
+    let active = false;
+    function check(node) {
+      if (typeof node === 'object' && node !== null) {
+        if (node.href && node.href === pageName) {
+          active = true;
+        }
+        if (node.items) {
+          node.items.forEach(check);
+        }
+      }
+    }
+    menu.columns.forEach(check);
+    return active;
+  }
+
   // Recursively render a node (string leaf or {title, items}) at a given depth
   function renderNode(node, depth) {
     if (typeof node === 'string') {
@@ -670,9 +702,10 @@
     const ulClass = useTwoCols ? `${ulBaseClass} mega-two-col` : ulBaseClass;
     const childList = hasChildren ? `<ul class="${ulClass}">${node.items.map(child => renderNode(child, depth + 1)).join('')}</ul>` : '';
     const href = node.href || '#';
+    const isActiveLink = (node.href && node.href === pageName);
 
     if (depth === 0) {
-      const headingSize = 'text-[15px] font-bold text-slate-900';
+      const headingSize = isActiveLink ? 'text-[15px] font-extrabold text-[#004A99]' : 'text-[15px] font-bold text-slate-900';
       return `<li>
         <a href="${href}" class="group/link flex items-center gap-1.5 ${headingSize} hover:text-navy transition">
           <span>${node.title}</span>
@@ -684,10 +717,11 @@
 
     // depth >= 1: collapsible groups to avoid long, deeply-nested lists pushing scroll
     const headingSize = depth === 1 ? 'text-sm font-semibold text-navy' : 'text-sm font-semibold text-slate-700';
+    const textClass = isActiveLink ? 'text-sm font-bold text-[#004A99]' : headingSize;
     if (hasChildren) {
       return `<li class="mt-2">
         <details class="mega-details">
-          <summary class="cursor-pointer flex items-center gap-1.5 ${headingSize} hover:text-navy transition">
+          <summary class="cursor-pointer flex items-center gap-1.5 ${textClass} hover:text-navy transition">
             <i data-lucide="chevron-right" class="chev-icon w-3.5 h-3.5 shrink-0"></i>
             <span>${node.title}</span>
           </summary>
@@ -696,7 +730,7 @@
       </li>`;
     }
     return `<li class="mt-2">
-      <a href="${href}" class="group/link flex items-center gap-1.5 ${headingSize} hover:text-navy transition">
+      <a href="${href}" class="group/link flex items-center gap-1.5 ${textClass} hover:text-navy transition">
         <span>${node.title}</span>
         <i data-lucide="arrow-right" class="w-3.5 h-3.5 shrink-0 opacity-70 group-hover/link:translate-x-0.5 transition-transform"></i>
       </a>
@@ -727,8 +761,16 @@
     activeKey = null;
     megaPanel.classList.add('hidden');
     document.querySelectorAll('.nav-trigger').forEach(btn => {
-      btn.classList.remove('border-white', 'text-white');
-      btn.classList.add('border-transparent');
+      const idx = Array.from(navList.children).indexOf(btn.parentElement) - 1;
+      const menu = menuData[idx];
+      const isActive = menu ? isCategoryActive(menu, pageName) : false;
+      if (isActive) {
+        btn.classList.add('border-white', 'text-white');
+        btn.classList.remove('border-transparent');
+      } else {
+        btn.classList.remove('border-white', 'text-white');
+        btn.classList.add('border-transparent');
+      }
       const chev = btn.querySelector('[data-chev]');
       if (chev) chev.setAttribute('data-lucide', 'chevron-down');
     });
@@ -751,11 +793,20 @@
     megaPanel.classList.remove('hidden');
 
     document.querySelectorAll('.nav-trigger').forEach(b => {
-      const isActive = b === btn;
-      b.classList.toggle('border-white', isActive);
-      b.classList.toggle('border-transparent', !isActive);
+      const isCurrentlyOpen = b === btn;
+      const idx = Array.from(navList.children).indexOf(b.parentElement) - 1;
+      const m = menuData[idx];
+      const isCurrentlyActive = m ? isCategoryActive(m, pageName) : false;
+
+      if (isCurrentlyOpen || isCurrentlyActive) {
+        b.classList.add('border-white');
+        b.classList.remove('border-transparent');
+      } else {
+        b.classList.remove('border-white');
+        b.classList.add('border-transparent');
+      }
       const chev = b.querySelector('[data-chev]');
-      if (chev) chev.setAttribute('data-lucide', isActive ? 'chevron-up' : 'chevron-down');
+      if (chev) chev.setAttribute('data-lucide', isCurrentlyOpen ? 'chevron-up' : 'chevron-down');
     });
     lucide.createIcons();
   }
@@ -764,7 +815,9 @@
     const li = document.createElement('li');
     const btn = document.createElement('button');
     btn.type = 'button';
-    btn.className = 'nav-trigger flex items-center gap-1 px-4 py-[16px] border-b-2 border-transparent text-[14px] font-medium hover:opacity-90 transition';
+    const isActive = isCategoryActive(menu, pageName);
+    const borderClass = isActive ? 'border-white' : 'border-transparent';
+    btn.className = `nav-trigger flex items-center gap-1 px-4 py-[16px] border-b-2 ${borderClass} text-[14px] font-medium hover:opacity-90 transition`;
     btn.innerHTML = `<span>${menu.label}</span> <i data-lucide="chevron-down" data-chev class="w-3.5 h-3.5"></i>`;
     btn.addEventListener('mouseenter', () => openMega(menu, btn));
     btn.addEventListener('click', (e) => {
@@ -803,8 +856,10 @@
       return `<li><a href="#" class="block py-2 text-sm text-slate-600 hover:text-navy transition" style="padding-left:${padLeft}px;padding-right:24px;">${node}</a></li>`;
     }
     const hasChildren = !!(node.items && node.items.length);
+    const isActiveLink = (node.href && node.href === pageName);
     if (!hasChildren) {
-      return `<li><a href="${node.href || '#'}" class="block py-2 text-sm text-slate-600 hover:text-navy transition" style="padding-left:${padLeft}px;padding-right:24px;">${node.title}</a></li>`;
+      const textClass = isActiveLink ? 'text-[#004A99] font-bold bg-blue-50/50' : 'text-slate-600 hover:text-navy';
+      return `<li><a href="${node.href || '#'}" class="block py-2 text-sm ${textClass} transition" style="padding-left:${padLeft}px;padding-right:24px;">${node.title}</a></li>`;
     }
     const sizeClass = depth === 0 ? 'font-semibold text-slate-800' : 'font-medium text-slate-700';
     const childItems = node.items.map(c => renderMobileNode(c, depth + 1)).join('');
@@ -836,7 +891,7 @@
           </a>`).join('')}
       </div>
     </li>
-    <li><a href="index.html" class="block px-6 py-3 font-semibold text-slate-800">Utama</a></li>`;
+    <li><a href="index.html" class="block px-6 py-3 font-semibold ${pageName === 'index.html' ? 'text-[#004A99] bg-blue-50/50' : 'text-slate-800'}">Utama</a></li>`;
   menuData.forEach(menu => {
     const childItems = menu.columns.map(c => renderMobileNode(c, 1)).join('');
     mobileHtml += `

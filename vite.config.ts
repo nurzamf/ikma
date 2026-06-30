@@ -16,6 +16,7 @@ export default defineConfig(() => {
         input: {
           main: path.resolve(__dirname, 'index.html'),
           visiMisi: path.resolve(__dirname, 'visi-misi-fungsi.html'),
+          latarBelakang: path.resolve(__dirname, 'latar-belakang-ikma.html'),
         },
       },
     },
