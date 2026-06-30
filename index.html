@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Institut Koperasi Malaysia (IKMa) | Laman Web Rasmi</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Inter', 'sans-serif'] },
+        colors: {
+          navy: { DEFAULT: '#0B2D6B', dark: '#081F4D', light: '#13408F' },
+          accent: { red: '#C8102E' }
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body { font-family: 'Inter', sans-serif; }
+  .icon-circle { width: 44px; height: 44px; }
+  .skip-link:focus { transform: translateY(0); }
+
+  /* Accessibility Tools */
+  html { --a11y-scale: 1; --a11y-font-scale: 1; --a11y-line-scale: 1; --a11y-letter-scale: 1; }
+  html.a11y-invert body { filter: invert(1) hue-rotate(180deg); }
+  html.a11y-monochrome body { filter: grayscale(1); }
+  html.a11y-dark-contrast body { background: #0b0f19 !important; color: #f1f5f9 !important; filter: invert(1) hue-rotate(180deg) contrast(1.1); }
+  html.a11y-light-contrast body { filter: contrast(1.3) brightness(1.08); }
+  html.a11y-low-saturation body { filter: saturate(0.4); }
+  html.a11y-high-saturation body { filter: saturate(2); }
+  html.a11y-highlight-links a { outline: 2px solid #fbbf24 !important; background: #fef3c7 !important; color: #000 !important; }
+  html.a11y-highlight-headings h1, html.a11y-highlight-headings h2, html.a11y-highlight-headings h3 { outline: 2px solid #004A99 !important; background: #dbeafe !important; }
+  html.a11y-read-mode main { max-width: 760px; margin: 0 auto; line-height: 1.9; }
+  html.a11y-read-mode main img { display: none; }
+  body { font-size: calc(1em * var(--a11y-font-scale, 1)); line-height: calc(1.5 * var(--a11y-line-scale, 1)); letter-spacing: calc(0.02em * (var(--a11y-letter-scale, 1) - 1)); }
+
+  /* Mega menu collapsible submenus */
+  .mega-details > summary { list-style: none; }
+  .mega-details > summary::-webkit-details-marker { display: none; }
+  .mega-details .chev-icon { transition: transform 0.2s ease; }
+  .mega-details[open] > summary .chev-icon { transform: rotate(90deg); }
+  .mega-two-col { columns: 2; column-gap: 1.5rem; }
+  .mega-two-col > li { break-inside: avoid; }
+  @media (max-width: 480px) { .mega-two-col { columns: 1; } }
+
+  /* Mobile slider */
+  .no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .slider-track { scroll-snap-type: x mandatory; }
+  .slider-item { scroll-snap-align: start; }
+  .slider-arrow { width: 30px; height: 30px; border-radius: 9999px; background: rgba(11,45,107,0.06); display: flex; align-items: center; justify-content: center; color: #0B2D6B; transition: background 0.15s ease; }
+  .slider-arrow:active { background: rgba(11,45,107,0.15); }
+</style>
+</head>
+<body class="bg-white text-slate-800 antialiased">
+
+<a href="#main" class="skip-link sr-only focus:not-sr-only fixed top-0 left-0 bg-navy text-white px-4 py-2 z-[100] -translate-y-full focus:translate-y-0 transition-transform">Langkau ke kandungan utama</a>
+
+<!-- TOP UTILITY BAR -->
+<div class="border-b border-slate-100">
+  <div class="max-w-[1280px] mx-auto px-6 lg:px-10 flex items-center justify-between py-3">
+    <a href="index.html" class="flex items-center">
+      <img src="src/assets/img/ikma-logo.png" alt="Logo IKMa" width="460" height="70" class="w-[460px] h-[70px] object-contain">
+    </a>
+    <div class="hidden md:flex items-center gap-7 text-[11px] text-slate-500">
+      <a href="#" class="flex flex-col items-center gap-1 hover:text-navy transition">
+        <img src="src/assets/img/SealQuestion.png" alt="Soalan Lazim" width="32" height="32" class="w-8 h-8 object-cover rounded">
+        Soalan Lazim
+      </a>
+      <a href="#" class="flex flex-col items-center gap-1 hover:text-navy transition">
+        <img src="src/assets/img/Chats.png" alt="Aduan & Maklumbalas" width="32" height="32" class="w-8 h-8 object-cover rounded">
+        Aduan &amp; Maklumbalas
+      </a>
+      <a href="#" class="flex flex-col items-center gap-1 hover:text-navy transition">
+        <img src="src/assets/img/TreeStructure.png" alt="Peta Laman" width="32" height="32" class="w-8 h-8 object-cover rounded">
+        Peta Laman
+      </a>
+      <a href="#" class="flex flex-col items-center gap-1 hover:text-navy transition">
+        <img src="src/assets/img/Phone.png" alt="Hubungi Kami" width="32" height="32" class="w-8 h-8 object-cover rounded">
+        Hubungi Kami
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN NAV -->
+<header id="siteHeader" class="sticky top-0 z-50 bg-[#004A99]">
+  <nav class="max-w-[1280px] mx-auto px-6 lg:px-10 flex items-center justify-between">
+    <ul id="navList" class="hidden lg:flex items-center text-[14px] text-white">
+      <li><a href="index.html" class="block px-4 py-[18px] font-medium border-b-2 border-white">Utama</a></li>
+    </ul>
+
+    <button id="mobileMenuBtn" class="lg:hidden text-white py-4" aria-label="Buka menu">
+      <i data-lucide="menu" class="w-6 h-6"></i>
+    </button>
+
+    <div class="flex items-center gap-4 text-white text-[13px] font-semibold py-3">
+      <div class="relative">
+        <button id="langBtn" class="flex items-center gap-1 hover:opacity-80 transition">
+          <span id="langLabel">MS</span> <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i>
+        </button>
+        <div id="langMenu" class="hidden absolute right-0 top-full mt-2 bg-white text-slate-700 rounded-md shadow-lg overflow-hidden min-w-[110px] z-50">
+          <button type="button" class="lang-option w-full text-left px-4 py-2 text-sm hover:bg-slate-50" data-lang="MS">Bahasa Melayu</button>
+          <button type="button" class="lang-option w-full text-left px-4 py-2 text-sm hover:bg-slate-50" data-lang="EN">English</button>
+        </div>
+      </div>
+      <button id="accessBtn" class="hover:opacity-80 transition" aria-label="Alat Kebolehcapaian"><i data-lucide="accessibility" class="w-[18px] h-[18px]"></i></button>
+      <button id="searchBtn" class="hover:opacity-80 transition" aria-label="Carian"><i data-lucide="search" class="w-[18px] h-[18px]"></i></button>
+    </div>
+  </nav>
+
+  <!-- Accessibility Tools Panel -->
+  <div id="accessOverlay" class="hidden fixed inset-0 z-[60] bg-black/30">
+    <div id="accessPanel" class="absolute top-4 right-4 w-[330px] max-w-[92vw] max-h-[90vh] overflow-y-auto bg-white rounded-2xl shadow-2xl p-5">
+      <div class="flex items-center justify-between mb-5">
+        <h3 class="text-lg font-bold text-slate-800">Accessibility Tools</h3>
+        <div class="flex items-center gap-3">
+          <button id="accessReset" class="text-slate-400 hover:text-slate-700" aria-label="Set semula"><i data-lucide="rotate-ccw" class="w-5 h-5"></i></button>
+          <button id="accessClose" class="w-9 h-9 rounded-full bg-[#004A99] text-white flex items-center justify-center hover:opacity-90" aria-label="Tutup"><i data-lucide="x" class="w-4 h-4"></i></button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3 mb-3">
+        <button type="button" class="access-toggle flex items-center gap-2 bg-slate-100 hover:bg-slate-200 rounded-lg px-3 py-3 text-sm text-slate-700 text-left" data-action="invert">
+          <i data-lucide="contrast" class="w-5 h-5 shrink-0"></i> Invert colors
+        </button>
+        <button type="button" class="access-toggle flex items-center gap-2 bg-slate-100 hover:bg-slate-200 rounded-lg px-3 py-3 text-sm text-slate-700 text-left" data-action="monochrome">
+          <i data-lucide="circle-slash-2" class="w-5 h-5 shrink-0"></i> Monochrome
+        </button>
+        <button type="button" class="access-toggle flex items-center gap-2 bg-slate-100 hover:bg-slate-200 rounded-lg px-3 py-3 text-sm text-slate-700 text-left" data-action="dark-contrast">
+          <i data-lucide="moon" class="w-5 h-5 shrink-0"></i> Dark contrast
+        </button>
+        <button type="button" class="access-toggle flex items-center gap-2 bg-slate-100 hover:bg-slate-200 rounded-lg px-3 py-3 text-sm text-slate-700 text-left" data-action="light-contrast">
+          <i data-lucide="sun" class="w-5 h-5 shrink-0"></i> Light contrast
+        </button>
+        <button type="button" class="access-toggle flex items-center gap-2 bg-slate-100 hover:bg-slate-200 rounded-lg px-3 py-3 text-sm text-slate-700 text-left" data-action="low-saturation">
+          <i data-lucide="droplet" class="w-5 h-5 shrink-0"></i> Low saturation
+        </button>
+        <button type="button" class="access-toggle flex items-center gap-2 bg-slate-100 hover:bg-slate-200 rounded-lg px-3 py-3 text-sm text-slate-700 text-left" data-action="high-saturation">
+          <i data-lucide="circle" class="w-5 h-5 shrink-0"></i> High saturation
+        </button>
+        <button type="button" class="access-toggle flex items-center gap-2 bg-slate-100 hover:bg-slate-200 rounded-lg px-3 py-3 text-sm text-slate-700 text-left" data-action="highlight-links">
+          <i data-lucide="link" class="w-5 h-5 shrink-0"></i> Highlight links
+        </button>
+        <button type="button" class="access-toggle flex items-center gap-2 bg-slate-100 hover:bg-slate-200 rounded-lg px-3 py-3 text-sm text-slate-700 text-left" data-action="highlight-headings">
+          <i data-lucide="heading-1" class="w-5 h-5 shrink-0"></i> Highlight headings
+        </button>
+        <button type="button" class="access-toggle flex items-center gap-2 bg-slate-100 hover:bg-slate-200 rounded-lg px-3 py-3 text-sm text-slate-700 text-left" data-action="screen-reader">
+          <i data-lucide="activity" class="w-5 h-5 shrink-0"></i> Screen reader
+        </button>
+        <button type="button" class="access-toggle flex items-center gap-2 bg-slate-100 hover:bg-slate-200 rounded-lg px-3 py-3 text-sm text-slate-700 text-left" data-action="read-mode">
+          <i data-lucide="align-left" class="w-5 h-5 shrink-0"></i> Read mode
+        </button>
+      </div>
+
+      <div class="space-y-3" id="accessSliders">
+        <!-- sliders injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Mega menu panel -->
+  <div id="megaPanel" class="hidden border-t border-slate-200 bg-white shadow-lg">
+    <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-8 relative max-h-[75vh] overflow-y-auto">
+      <button id="closeMega" class="absolute top-0 right-6 lg:right-10 text-slate-400 hover:text-slate-700" aria-label="Tutup menu">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      <h2 id="megaTitle" class="flex items-center gap-2 text-2xl font-bold text-slate-800 mb-8"></h2>
+      <div id="megaContent" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-8"></div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-slate-200 max-h-[70vh] overflow-y-auto">
+    <ul id="mobileNavList" class="text-slate-700 text-sm font-medium divide-y divide-slate-100"></ul>
+  </div>
+
+  <!-- Search overlay -->
+  <div id="searchOverlay" class="hidden bg-slate-50 border-t border-slate-200">
+    <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-4">
+      <form class="flex items-center gap-3">
+        <i data-lucide="search" class="w-5 h-5 text-slate-400"></i>
+        <input type="text" placeholder="Cari di laman web IKMa..." class="flex-1 bg-transparent text-slate-700 placeholder-slate-400 outline-none text-sm py-2 border-b border-slate-300 focus:border-navy">
+        <button type="button" id="closeSearch" class="text-slate-400 hover:text-slate-700"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </form>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="grid grid-cols-1 md:grid-cols-2 md:h-[640px]">
+  <div style="background-color:#003369;" class="text-white px-6 lg:pr-16 py-16 md:py-0 flex flex-col justify-center lg:pl-64">
+    <h1 class="text-4xl sm:text-5xl font-bold leading-tight mb-6">Pencetus Minda<br>Koperasi Negara</h1>
+    <p class="text-white/85 text-base leading-relaxed max-w-md mb-8">
+      Menyediakan latihan, penyelidikan dan khidmat perundingan bagi memperkasa gerakan koperasi Malaysia melalui pembangunan modal insan yang berdaya saing.
+    </p>
+    <a href="#" class="group inline-flex items-center gap-2 bg-white text-navy font-semibold text-sm px-6 py-3.5 rounded-md w-fit hover:bg-slate-100 transition">
+      Carian Kursus <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+    </a>
+  </div>
+  <div class="relative min-h-[320px] md:min-h-0 h-full">
+    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sesi latihan koperasi" class="absolute inset-0 w-full h-full object-cover">
+    <div class="absolute inset-0" style="background-color:#003369; opacity:0.25;"></div>
+  </div>
+</section>
+
+<!-- ABOUT / AUDIENCE -->
+<section class="max-w-[1280px] mx-auto px-6 lg:px-10 py-16">
+  <h2 class="text-3xl font-bold text-navy mb-4">Institut Koperasi Malaysia (IKMa)</h2>
+  <p class="text-slate-600 max-w-3xl leading-relaxed mb-10">
+    IKMa membantu anggota, pemimpin dan warga koperasi meningkatkan pengetahuan, kemahiran dan daya saing melalui latihan, penyelidikan serta perkhidmatan pembangunan koperasi.
+  </p>
+
+  <div class="slider-wrapper">
+    <div class="sm:hidden flex justify-end items-center gap-2 mb-2">
+      <button type="button" class="slider-prev slider-arrow" aria-label="Sebelumnya"><i data-lucide="chevron-left" class="w-4 h-4"></i></button>
+      <button type="button" class="slider-next slider-arrow" aria-label="Seterusnya"><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+    </div>
+    <div class="slider-track no-scrollbar flex overflow-x-auto gap-6 -mx-6 px-6 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 sm:overflow-visible lg:grid-cols-4 sm:gap-10">
+    <a href="#" class="slider-item shrink-0 w-[78%] sm:w-auto group block">
+      <i data-lucide="users" class="w-7 h-7 text-navy mb-4 group-hover:text-[#004A99] transition-colors"></i>
+      <h3 class="font-bold text-slate-900 mb-1 group-hover:text-[#004A99] transition-colors">Untuk Anggota Koperasi</h3>
+      <p class="text-sm text-slate-500 mb-3">Latihan dan pembangunan kemahiran.</p>
+      <span class="inline-flex items-center gap-1 text-navy text-sm font-semibold">Terokai kursus &amp; latihan <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i></span>
+    </a>
+    <a href="#" class="slider-item shrink-0 w-[78%] sm:w-auto group block">
+      <i data-lucide="briefcase" class="w-7 h-7 text-navy mb-4 group-hover:text-[#004A99] transition-colors"></i>
+      <h3 class="font-bold text-slate-900 mb-1 group-hover:text-[#004A99] transition-colors">Untuk Ahli Lembaga / Pengurusan</h3>
+      <p class="text-sm text-slate-500 mb-3">Kepimpinan dan tadbir urus koperasi.</p>
+      <span class="inline-flex items-center gap-1 text-navy text-sm font-semibold">Lihat program eksekutif <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i></span>
+    </a>
+    <a href="#" class="slider-item shrink-0 w-[78%] sm:w-auto group block">
+      <i data-lucide="rocket" class="w-7 h-7 text-navy mb-4 group-hover:text-[#004A99] transition-colors"></i>
+      <h3 class="font-bold text-slate-900 mb-1 group-hover:text-[#004A99] transition-colors">Untuk Bakal Penubuh Koperasi</h3>
+      <p class="text-sm text-slate-500 mb-3">Panduan memulakan koperasi anda.</p>
+      <span class="inline-flex items-center gap-1 text-navy text-sm font-semibold">Mulakan penubuhan koperasi <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i></span>
+    </a>
+    <a href="#" class="slider-item shrink-0 w-[78%] sm:w-auto group block">
+      <i data-lucide="graduation-cap" class="w-7 h-7 text-navy mb-4 group-hover:text-[#004A99] transition-colors"></i>
+      <h3 class="font-bold text-slate-900 mb-1 group-hover:text-[#004A99] transition-colors">Untuk Pelajar &amp; Pendidik</h3>
+      <p class="text-sm text-slate-500 mb-3">Terokai kajian dan penerbitan.</p>
+      <span class="inline-flex items-center gap-1 text-navy text-sm font-semibold">Lihat bahan rujukan <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i></span>
+    </a>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK SERVICES -->
+<section class="bg-slate-50 py-16">
+  <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+    <h2 class="text-3xl font-bold text-navy mb-8">Perkhidmatan Pantas</h2>
+    <div class="slider-wrapper">
+    <div class="sm:hidden flex justify-end items-center gap-2 mb-2">
+      <button type="button" class="slider-prev slider-arrow" aria-label="Sebelumnya"><i data-lucide="chevron-left" class="w-4 h-4"></i></button>
+      <button type="button" class="slider-next slider-arrow" aria-label="Seterusnya"><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+    </div>
+    <div class="slider-track no-scrollbar flex overflow-x-auto gap-5 -mx-6 px-6 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 sm:overflow-visible lg:grid-cols-4">
+
+      <a href="#" class="slider-item shrink-0 w-[70%] sm:w-auto bg-white rounded-lg p-6 hover:shadow-md transition border border-slate-100">
+        <i data-lucide="bookmark" class="w-6 h-6 text-navy mb-4"></i>
+        <h3 class="font-bold text-slate-900 mb-1">Mohon Kursus</h3>
+        <p class="text-sm text-slate-500">Pendaftaran kursus dan program latihan</p>
+      </a>
+      <a href="#" class="slider-item shrink-0 w-[70%] sm:w-auto bg-white rounded-lg p-6 hover:shadow-md transition border border-slate-100">
+        <i data-lucide="calendar" class="w-6 h-6 text-navy mb-4"></i>
+        <h3 class="font-bold text-slate-900 mb-1">Kalendar Latihan</h3>
+        <p class="text-sm text-slate-500">Jadual kursus terkini</p>
+      </a>
+      <a href="#" class="slider-item shrink-0 w-[70%] sm:w-auto bg-white rounded-lg p-6 hover:shadow-md transition border border-slate-100">
+        <i data-lucide="monitor" class="w-6 h-6 text-navy mb-4"></i>
+        <h3 class="font-bold text-slate-900 mb-1">E-Pembelajaran</h3>
+        <p class="text-sm text-slate-500">Akses platform pembelajaran atas talian</p>
+      </a>
+      <a href="#" class="slider-item shrink-0 w-[70%] sm:w-auto bg-white rounded-lg p-6 hover:shadow-md transition border border-slate-100">
+        <i data-lucide="book-open" class="w-6 h-6 text-navy mb-4"></i>
+        <h3 class="font-bold text-slate-900 mb-1">Penerbitan</h3>
+        <p class="text-sm text-slate-500">Buku, Jurnal dan bahan rujukan</p>
+      </a>
+
+      <a href="#" class="slider-item shrink-0 w-[70%] sm:w-auto bg-white rounded-lg p-6 hover:shadow-md transition border border-slate-100">
+        <i data-lucide="trending-up" class="w-6 h-6 text-navy mb-4"></i>
+        <h3 class="font-bold text-slate-900 mb-1">Penyelidikan</h3>
+        <p class="text-sm text-slate-500">Laporan dan kajian terkini</p>
+      </a>
+      <a href="#" class="slider-item shrink-0 w-[70%] sm:w-auto bg-white rounded-lg p-6 hover:shadow-md transition border border-slate-100">
+        <i data-lucide="folder" class="w-6 h-6 text-navy mb-4"></i>
+        <h3 class="font-bold text-slate-900 mb-1">Direktori Koperasi</h3>
+        <p class="text-sm text-slate-500">Cari maklumat koperasi</p>
+      </a>
+      <a href="#" class="slider-item shrink-0 w-[70%] sm:w-auto bg-white rounded-lg p-6 hover:shadow-md transition border border-slate-100">
+        <i data-lucide="library" class="w-6 h-6 text-navy mb-4"></i>
+        <h3 class="font-bold text-slate-900 mb-1">E-Perpustakaan</h3>
+        <p class="text-sm text-slate-500">Akses buku &amp; jurnal digital</p>
+      </a>
+      <a href="#" class="slider-item shrink-0 w-[70%] sm:w-auto group bg-white rounded-lg p-6 hover:shadow-md transition border border-slate-100 flex items-center justify-center">
+        <span class="inline-flex items-center gap-1 text-navy font-semibold text-sm">Lihat servis lain <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i></span>
+      </a>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- KENALI IKMA -->
+<section id="kenali-ikma" class="grid grid-cols-1 md:grid-cols-2 md:h-[400px]">
+  <div class="h-[180px] md:h-full overflow-hidden">
+    <img src="src/assets/img/ikma-img.png" alt="Bangunan Institut Koperasi Malaysia" class="block w-full h-full object-cover">
+  </div>
+  <div class="px-6 lg:px-16 py-6 md:py-10 flex flex-col justify-center">
+    <h2 class="text-2xl md:text-3xl font-bold text-navy mb-2 md:mb-4">Kenali IKMa</h2>
+    <p class="text-slate-600 leading-relaxed mb-4 md:mb-8 max-w-md text-sm md:text-base">
+      Ketahui peranan IKMa dalam memperkasa pembangunan koperasi negara.
+    </p>
+    <a href="#" class="inline-flex items-center justify-center bg-navy text-white font-semibold text-sm px-6 py-3 md:py-3.5 rounded-md w-fit hover:bg-navy-light transition">
+      Terokai Latar Belakang IKMa
+    </a>
+  </div>
+</section>
+
+<!-- KISAH KEJAYAAN -->
+<section id="kejayaan" class="grid grid-cols-1 md:grid-cols-2 md:h-[400px]">
+  <div class="px-6 lg:px-16 lg:pl-64 py-6 md:py-10 flex flex-col justify-center items-start text-left order-2 md:order-1">
+    <h2 class="text-2xl md:text-3xl font-bold text-navy mb-2 md:mb-4">Selami Kisah Kejayaan Kami</h2>
+    <p class="text-slate-600 leading-relaxed mb-4 md:mb-8 max-w-md text-sm md:text-base">
+      Lihat bagaimana latihan dan bimbingan IKMa memberi impak kepada koperasi.
+    </p>
+    <a href="#" class="inline-flex items-center justify-center bg-navy text-white font-semibold text-sm px-6 py-3 md:py-3.5 rounded-md w-fit hover:bg-navy-light transition">
+      Terokai Kisah Kejayaan IKMa
+    </a>
+  </div>
+  <div class="h-[180px] md:h-full overflow-hidden order-1 md:order-2">
+    <img src="https://images.unsplash.com/photo-1758691737492-48e8fdd336f7?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Pasukan meraikan kejayaan" class="block w-full h-full object-cover">
+  </div>
+</section>
+
+<!-- NEWS -->
+<section class="bg-slate-50 py-16">
+  <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+    <h2 class="text-3xl font-bold text-navy mb-2">Berita dan Pengumuman</h2>
+    <p class="text-slate-500 mb-10">Maklumat mengenai acara akan datang dan inisiatif semasa boleh didapati di sini.</p>
+
+    <div class="slider-wrapper">
+      <div class="sm:hidden flex justify-end items-center gap-2 mb-2">
+        <button type="button" class="slider-prev slider-arrow" aria-label="Sebelumnya"><i data-lucide="chevron-left" class="w-4 h-4"></i></button>
+        <button type="button" class="slider-next slider-arrow" aria-label="Seterusnya"><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+      </div>
+      <div class="slider-track no-scrollbar flex overflow-x-auto gap-6 mb-10 -mx-6 px-6 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 sm:overflow-visible lg:grid-cols-3" id="newsGrid">
+        <!-- injected by JS -->
+      </div>
+    </div>
+
+    <div class="text-center">
+      <a href="#" class="inline-block border border-navy text-navy font-semibold text-sm px-6 py-3 rounded-md hover:bg-navy hover:text-white transition">Lihat semua berita dan pengumuman</a>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="py-16">
+  <div class="max-w-[1280px] mx-auto px-6 lg:px-10 text-center">
+    <p class="text-sm text-slate-500 max-w-xl mx-auto mb-10">Kami bekerjasama dengan agensi berkaitan untuk menterjemahkan idea dan strategi IKMa kepada realiti.</p>
+    <div class="hidden sm:flex flex-col items-center gap-y-8">
+      <div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-8">
+        <a href="https://www.skm.gov.my" target="_blank" rel="noopener noreferrer" aria-label="Suruhanjaya Koperasi Malaysia"><img src="src/assets/img/image310.png" alt="Suruhanjaya Koperasi Malaysia" width="115" height="86" class="object-contain grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition"></a>
+        <a href="https://www.smecorp.gov.my" target="_blank" rel="noopener noreferrer" aria-label="SME Corp"><img src="src/assets/img/image311.png" alt="SME Corp" width="115" height="86" class="object-contain grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition"></a>
+        <a href="https://www.tekun.gov.my" target="_blank" rel="noopener noreferrer" aria-label="Tekun Nasional"><img src="src/assets/img/image312.png" alt="Tekun Nasional" width="115" height="86" class="object-contain grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition"></a>
+        <a href="https://www.insken.gov.my" target="_blank" rel="noopener noreferrer" aria-label="Insken"><img src="src/assets/img/image313.png" alt="Insken" width="115" height="86" class="object-contain grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition"></a>
+        <a href="https://www.bankrakyat.com.my" target="_blank" rel="noopener noreferrer" aria-label="Bank Rakyat"><img src="src/assets/img/image314.png" alt="Bank Rakyat" width="115" height="86" class="object-contain grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition"></a>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-8">
+        <a href="https://www.smebank.com.my" target="_blank" rel="noopener noreferrer" aria-label="SME Bank"><img src="src/assets/img/image315.png" alt="SME Bank" width="115" height="86" class="object-contain grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition"></a>
+        <a href="https://www.uda.com.my" target="_blank" rel="noopener noreferrer" aria-label="UDA"><img src="src/assets/img/image316.png" alt="UDA" width="115" height="86" class="object-contain grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition"></a>
+        <a href="https://www.pernas.com.my" target="_blank" rel="noopener noreferrer" aria-label="Pernas"><img src="src/assets/img/image317.png" alt="Pernas" width="115" height="86" class="object-contain grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition"></a>
+        <a href="https://www.aim.gov.my" target="_blank" rel="noopener noreferrer" aria-label="Amanah Ikhtiar Malaysia"><img src="src/assets/img/image318.png" alt="Amanah Ikhtiar Malaysia" width="115" height="86" class="object-contain grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition"></a>
+      </div>
+    </div>
+    <div class="slider-wrapper sm:hidden">
+      <div class="flex justify-end items-center gap-2 mb-2">
+        <button type="button" class="slider-prev slider-arrow" aria-label="Sebelumnya"><i data-lucide="chevron-left" class="w-4 h-4"></i></button>
+        <button type="button" class="slider-next slider-arrow" aria-label="Seterusnya"><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+      </div>
+      <div class="slider-track no-scrollbar flex overflow-x-auto items-center gap-x-8 -mx-6 px-6">
+        <a href="https://www.skm.gov.my" target="_blank" rel="noopener noreferrer" aria-label="Suruhanjaya Koperasi Malaysia" class="shrink-0"><img src="src/assets/img/image310.png" alt="Suruhanjaya Koperasi Malaysia" width="115" height="86" class="slider-item object-contain grayscale opacity-80"></a>
+        <a href="https://www.smecorp.gov.my" target="_blank" rel="noopener noreferrer" aria-label="SME Corp" class="shrink-0"><img src="src/assets/img/image311.png" alt="SME Corp" width="115" height="86" class="slider-item object-contain grayscale opacity-80"></a>
+        <a href="https://www.tekun.gov.my" target="_blank" rel="noopener noreferrer" aria-label="Tekun Nasional" class="shrink-0"><img src="src/assets/img/image312.png" alt="Tekun Nasional" width="115" height="86" class="slider-item object-contain grayscale opacity-80"></a>
+        <a href="https://www.insken.gov.my" target="_blank" rel="noopener noreferrer" aria-label="Insken" class="shrink-0"><img src="src/assets/img/image313.png" alt="Insken" width="115" height="86" class="slider-item object-contain grayscale opacity-80"></a>
+        <a href="https://www.bankrakyat.com.my" target="_blank" rel="noopener noreferrer" aria-label="Bank Rakyat" class="shrink-0"><img src="src/assets/img/image314.png" alt="Bank Rakyat" width="115" height="86" class="slider-item object-contain grayscale opacity-80"></a>
+        <a href="https://www.smebank.com.my" target="_blank" rel="noopener noreferrer" aria-label="SME Bank" class="shrink-0"><img src="src/assets/img/image315.png" alt="SME Bank" width="115" height="86" class="slider-item object-contain grayscale opacity-80"></a>
+        <a href="https://www.uda.com.my" target="_blank" rel="noopener noreferrer" aria-label="UDA" class="shrink-0"><img src="src/assets/img/image316.png" alt="UDA" width="115" height="86" class="slider-item object-contain grayscale opacity-80"></a>
+        <a href="https://www.pernas.com.my" target="_blank" rel="noopener noreferrer" aria-label="Pernas" class="shrink-0"><img src="src/assets/img/image317.png" alt="Pernas" width="115" height="86" class="slider-item object-contain grayscale opacity-80"></a>
+        <a href="https://www.aim.gov.my" target="_blank" rel="noopener noreferrer" aria-label="Amanah Ikhtiar Malaysia" class="shrink-0"><img src="src/assets/img/image318.png" alt="Amanah Ikhtiar Malaysia" width="115" height="86" class="slider-item object-contain grayscale opacity-80"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer style="background-color:#1C1C1B;" class="text-white">
+  <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div>
+      <h4 class="text-white font-bold text-sm tracking-wide mb-4">HUBUNGI KAMI</h4>
+      <p class="font-semibold text-white text-sm mb-1">Institut Koperasi Malaysia</p>
+      <p class="text-sm leading-relaxed mb-3">103 Jalan Templer,<br>46700 Petaling Jaya, Selangor</p>
+      <p class="text-sm leading-relaxed">
+        Telefon: 603.7964.9000<br>
+        Faks: 603.7957.0434<br>
+        Emel: ikma@ikma.edu.my
+      </p>
+    </div>
+    <div>
+      <h4 class="text-white font-bold text-sm tracking-wide mb-4">ARTIKEL POPULAR</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#" class="hover:text-white transition">Permohonan Kursus</a></li>
+        <li><a href="#" class="hover:text-white transition">Ahli Lembaga Pengarah</a></li>
+        <li><a href="#" class="hover:text-white transition">Program Latihan IKMa</a></li>
+        <li><a href="#" class="hover:text-white transition">Kursus Wajib</a></li>
+        <li><a href="#" class="hover:text-white transition">Kursus Wajib 1</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-white font-bold text-sm tracking-wide mb-4">STATISTIK PELAWAT</h4>
+      <ul class="space-y-2 text-sm" id="statsList">
+        <li class="flex justify-between gap-6"><span>Hari Ini</span><span class="text-white">1453</span></li>
+        <li class="flex justify-between gap-6"><span>Semalam</span><span class="text-white">523</span></li>
+        <li class="flex justify-between gap-6"><span>Minggu Ini</span><span class="text-white">29769</span></li>
+        <li class="flex justify-between gap-6"><span>Bulan Ini</span><span class="text-white">8643689</span></li>
+        <li class="flex justify-between gap-6"><span>Jumlah</span><span class="text-white">78868969</span></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-white font-bold text-sm tracking-wide mb-4">IKUTI KAMI DI MEDIA SOSIAL</h4>
+      <div class="flex items-center gap-3 mb-6">
+        <a href="#" class="text-white hover:text-white transition" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.88h2.78l-.45 2.91h-2.33V22c4.78-.76 8.44-4.92 8.44-9.94z"/></svg>
+        </a>
+        <a href="#" class="text-white hover:text-white transition" aria-label="Twitter">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.49-1.75.85-2.72 1.04A4.28 4.28 0 0 0 16.1 4c-2.37 0-4.29 1.92-4.29 4.29 0 .34.04.67.11.98C8.28 9.1 4.96 7.4 2.74 4.79c-.37.64-.58 1.38-.58 2.17 0 1.49.76 2.81 1.91 3.58-.7-.02-1.36-.21-1.94-.53v.05c0 2.08 1.48 3.81 3.44 4.21-.36.1-.74.15-1.13.15-.28 0-.55-.03-.81-.08.55 1.71 2.14 2.96 4.03 3-1.47 1.16-3.33 1.85-5.35 1.85-.35 0-.69-.02-1.03-.06A12.13 12.13 0 0 0 8 21.5c7.85 0 12.14-6.51 12.14-12.16 0-.19 0-.37-.01-.55.83-.6 1.56-1.36 2.13-2.22-.76.34-1.58.57-2.44.67z"/></svg>
+        </a>
+        <a href="#" class="text-white hover:text-white transition" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 18v-7.6H5.67V18h2.67zM7 9.36c.86 0 1.4-.57 1.4-1.28-.02-.73-.54-1.28-1.38-1.28-.85 0-1.4.55-1.4 1.28 0 .71.53 1.28 1.36 1.28H7zm11 8.64v-4.27c0-2.29-1.22-3.35-2.86-3.35-1.32 0-1.9.73-2.23 1.24V10.4h-2.67c.04.76 0 7.6 0 7.6h2.67v-4.25c0-.23.02-.45.08-.61.18-.45.59-.92 1.28-.92.9 0 1.26.69 1.26 1.69V18H18z"/></svg>
+        </a>
+        <a href="#" class="text-white hover:text-white transition" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M12 2c-2.72 0-3.06.01-4.12.06-1.06.05-1.79.22-2.43.47-.66.26-1.22.6-1.77 1.16-.56.55-.9 1.11-1.16 1.77-.25.64-.42 1.37-.47 2.43C2 8.94 2 9.28 2 12s.01 3.06.06 4.12c.05 1.06.22 1.79.47 2.43.26.66.6 1.22 1.16 1.77.55.56 1.11.9 1.77 1.16.64.25 1.37.42 2.43.47C8.94 22 9.28 22 12 22s3.06-.01 4.12-.06c1.06-.05 1.79-.22 2.43-.47.66-.26 1.22-.6 1.77-1.16.56-.55.9-1.11 1.16-1.77.25-.64.42-1.37.47-2.43.05-1.06.06-1.4.06-4.12s-.01-3.06-.06-4.12c-.05-1.06-.22-1.79-.47-2.43a4.9 4.9 0 0 0-1.16-1.77 4.9 4.9 0 0 0-1.77-1.16c-.64-.25-1.37-.42-2.43-.47C15.06 2.01 14.72 2 12 2zm0 1.8c2.67 0 2.99.01 4.04.06.98.04 1.5.2 1.85.34.47.18.8.4 1.15.75.35.35.57.68.75 1.15.14.36.3.87.34 1.85.05 1.05.06 1.37.06 4.04s-.01 2.99-.06 4.04c-.04.98-.2 1.5-.34 1.85-.18.47-.4.8-.75 1.15-.35.35-.68.57-1.15.75-.36.14-.87.3-1.85.34-1.05.05-1.37.06-4.04.06s-2.99-.01-4.04-.06c-.98-.04-1.5-.2-1.85-.34a3.1 3.1 0 0 1-1.15-.75 3.1 3.1 0 0 1-.75-1.15c-.14-.36-.3-.87-.34-1.85C3.81 14.99 3.8 14.67 3.8 12s.01-2.99.06-4.04c.04-.98.2-1.5.34-1.85.18-.47.4-.8.75-1.15.35-.35.68-.57 1.15-.75.36-.14.87-.3 1.85-.34C9.01 3.81 9.33 3.8 12 3.8zm0 3.05a5.15 5.15 0 1 0 0 10.3 5.15 5.15 0 0 0 0-10.3zm0 8.5a3.35 3.35 0 1 1 0-6.7 3.35 3.35 0 0 1 0 6.7zm5.35-8.7a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg>
+        </a>
+        <a href="#" class="text-white hover:text-white transition" aria-label="YouTube">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.56A3.02 3.02 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14c1.88.56 9.38.56 9.38.56s7.5 0 9.38-.56a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.6 15.6V8.4l6.4 3.6-6.4 3.6z"/></svg>
+        </a>
+      </div>
+      <p class="text-xs font-semibold text-white" id="lastUpdated">Kemaskini terakhir: 29 Jun 2026</p>
+    </div>
+  </div>
+
+  <div>
+    <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white">
+      <p>Hakcipta Terpelihara © <span id="year"></span> Institut Koperasi Malaysia</p>
+      <div class="flex flex-wrap items-center gap-5">
+        <a href="#" class="hover:text-white transition">Penafian</a>
+        <a href="#" class="hover:text-white transition">Dasar Keselamatan</a>
+        <a href="#" class="hover:text-white transition">Dasar Privasi</a>
+        <a href="#" class="hover:text-white transition">Soalan Lazim</a>
+        <a href="#" class="hover:text-white transition">Peta Laman</a>
+        <a href="#" class="hover:text-white transition">MyGov</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  lucide.createIcons();
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* =========================================================
+     MEGA MENU DATA
+     Each top-level entry renders as a header button.
+     `columns`: array of column nodes. A node is either
+       - a string (plain leaf link), or
+       - { title, items: [...] } (a heading with nested items)
+     Nesting can go arbitrarily deep using the same shape.
+  ========================================================= */
+  const menuData = [
+    {
+      key: 'info',
+      label: 'Info Korporat',
+      columns: [
+        { title: 'Profil', items: [
+          'Anggota Lembaga Pengarah',
+          'Perutusan Ketua Pengarah',
+          'Carta Organisasi',
+          'Latar Belakang IKMa',
+          'Fungsi & Kuasa IKMa',
+          { title: 'Visi, Misi & Fungsi IKMa', href: 'visi-misi-fungsi.html' },
+          'Kod Etika IKMa',
+        ]},
+        { title: 'Organisasi', items: [
+          'Pejabat Ketua Pengarah',
+          'Pejabat Timbalan Ketua Pengarah Pembangunan Modal Insan',
+          'Pejabat Timbalan Ketua Pengarah (Pengurusan)',
+          'Pejabat Pengarah Kanan (Bahagian Pembangunan & Perundingan Koperasi)',
+          'Pejabat Pengarah Kanan (Dasar & Strategik)',
+          'Pejabat Pengarah Kanan (Keusahawanan & Perniagaan)',
+          'Pejabat Pengarah Pentadbiran',
+        ]},
+        { title: 'Maklumat Bahagian', items: [
+          { title: 'Bahagian', items: [
+            { title: 'Bahagian Pembangunan & Perundingan Koperasi', items: [
+              'Pusat Perundingan Koperasi (PRK)',
+              'Pusat Pendidikan Tinggi (PPT)',
+              'Unit Pemantauan & Penilaian (UMN)',
+              'Pusat Pembangunan Koperasi (PPK)',
+            ]},
+            { title: 'Bahagian Dasar & Strategi', items: [
+              'Pusat Antarabangsa',
+              'Pusat Penyelidikan (CR)',
+            ]},
+            { title: 'Bahagian Keusahawanan & Perniagaan', items: [
+              'Pusat Pengurusan Perniagaan (PPP)',
+              { title: 'Sektor Keberhasilan', items: [
+                'Sektor Pelancongan (Coop Tourism)',
+                'Sektor Pemborongan dan Peruncitan (Coop Race)',
+                'Sektor Hartanah & Industri Pembinaan (Coop Ship)',
+                'Sektor Perladangan, Pertanian & Industri Asas Tani (SPAT)',
+              ]},
+              'Pusat Kewangan dan Akaun (PKA)',
+              'Pusat Teknologi Maklumat & Komunikasi (ICT)',
+            ]},
+          ]},
+          { title: 'Unit', items: [
+            'Unit Komunikasi Korporat (UKK)',
+            'Unit Perkhidmatan Perpustakaan',
+            'Unit Integriti (UI)',
+            'Unit Teknologi Maklumat (UTM)',
+            'Unit Kewangan & Perolehan',
+            'Unit Pengurusan Sumber Manusia (UPSM)',
+            'Unit Pembangunan Modal Insan & Transformasi Digital (UPMITD)',
+            'Unit Tadbiran Am (UTA)',
+            'Unit Audit Dalam',
+            'Unit Fasiliti & Sajian',
+            'Unit Penyelenggaraan & Kejuruteraan',
+          ]},
+          { title: 'Zon', items: [
+            'Zon Tengah', 'Zon Utara', 'Zon Timur', 'Zon Selatan', 'Zon Sabah', 'Zon Sarawak',
+          ]},
+        ]},
+        { title: 'Kemudahan di IKMa', items: [
+          "Auditorium Dato' Abdul Majid",
+          'Dewan Abdul Aziz Ishak',
+          'Bilik Kuliah',
+          'Dewan Makan',
+          'Asrama',
+          'Perpustakaan',
+          'Coop Mart',
+          'Surau',
+          'Gelanggang Futsal & Petanque',
+          'Kadar Sewaan',
+        ]},
+        { title: 'Piagam Pelanggan', items: [
+          'Kenyataan Piagam Pelanggan',
+          'Pencapaian Piagam Pelanggan',
+          'Arkib Pencapaian Piagam Pelanggan',
+        ]},
+        { title: 'Statistik', items: [
+          'Pencapaian Prestasi Pembangunan Modal Insan',
+          'Bilangan Transaksi Dalam Talian',
+        ]},
+      ],
+    },
+    {
+      key: 'koperator',
+      label: 'Koperator',
+      flat: true,
+      columns: [
+        'Program Akan Datang',
+        'Program Latihan IKMa',
+        { title: 'Kursus Wajib', items: [
+          'Kursus Wajib 1', 'Kursus Wajib 2', 'Kursus Wajib 3', 'Kursus Wajib JAD',
+        ]},
+        'Permohonan Kursus',
+        'Program Kerjasama Teknikal Malaysia (MTCP)',
+        'Perkhidmatan Dalam Talian',
+        'Muat Turun',
+        'MiRiCLe',
+      ],
+    },
+    {
+      key: 'awam',
+      label: 'Awam',
+      columns: [
+        { title: 'Sebut Harga & Tender', items: ['Arkib'] },
+        { title: 'Penyelidikan', items: ['Senarai Penyelidikan', 'Panduan dan Log Penyelidikan IKM'] },
+        { title: 'Media', items: ['Galeri Foto', 'Galeri Video', 'Galeri Audio'] },
+        { title: 'Penerbitan', items: [
+          'Panduan Penerbitan',
+          'Prosiding Penyelidikan',
+          'Malaysian Journal of Co-operative Studies',
+          'Laporan Tahunan',
+          'Monograf Penyelidikan',
+          'Siri Pengurusan',
+          'Dimensi Koop',
+          'Koleksi Ilmiah',
+          'Majalah Info IKMa',
+          'Kisah Kejayaan Koperasi',
+          'Koleksi Buku Perpustakaan',
+          'Pencapaian IKMa 2019',
+          'Buletin MiRiCLe',
+          'Buku 100 Tahun Gerakan Koperasi di Malaysia',
+          'Pelan Tindakan Pembangunan Modal Insan',
+          'Pelan Transkom',
+        ]},
+        { title: 'Lain-lain', items: [
+          'Siaran Akhbar', 'Teks Ucapan', 'Pekeliling Perbendaharaan', 'Keratan Akhbar', 'Pautan',
+        ]},
+      ],
+    },
+    {
+      key: 'warga',
+      label: 'Warga IKMa',
+      flat: true,
+      columns: [
+        'Intranet',
+        'Garis Panduan',
+        'Borang / Dokumen',
+        'Senarai Klinik Panel',
+        { title: 'Polisi', items: [
+          'Ekosistem Kondusif Sektor Awam (EKSA)',
+          'Ringkasan Eksekutif Pelan Strategik ICT (ISP)',
+          'Pelaksanaan MS ISO 9001:2015',
+          'Polisi Antirasuah IKMa',
+          'Polisi Konflik Kepentingan IKMa',
+        ]},
+      ],
+    },
+    {
+      key: 'epenyertaan',
+      label: 'e-Penyertaan',
+      flat: true,
+      columns: [
+        'Polisi e-Penyertaan',
+        'Pendapat Anda',
+        'Permohonan Mendapatkan Maklumat',
+        'Data Terbuka Kerajaan',
+      ],
+    },
+  ];
+
+  // Recursively render a node (string leaf or {title, items}) at a given depth
+  function renderNode(node, depth) {
+    if (typeof node === 'string') {
+      const sizeClass = depth === 0 ? 'text-[15px] font-semibold text-slate-800' : 'text-sm text-slate-600';
+      return `<li>
+        <a href="#" class="group/link flex items-center gap-1.5 py-1.5 ${sizeClass} hover:text-navy transition">
+          <span>${node}</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5 shrink-0 opacity-70 group-hover/link:translate-x-0.5 transition-transform"></i>
+        </a>
+      </li>`;
+    }
+
+    const hasChildren = !!(node.items && node.items.length);
+    const allLeafStrings = hasChildren && node.items.every(i => typeof i === 'string');
+    const useTwoCols = hasChildren && allLeafStrings && node.items.length >= 8;
+    const ulBaseClass = depth === 0 ? 'mt-2 space-y-1' : 'mt-1.5 ml-3 space-y-1 border-l border-slate-100 pl-3';
+    const ulClass = useTwoCols ? `${ulBaseClass} mega-two-col` : ulBaseClass;
+    const childList = hasChildren ? `<ul class="${ulClass}">${node.items.map(child => renderNode(child, depth + 1)).join('')}</ul>` : '';
+    const href = node.href || '#';
+
+    if (depth === 0) {
+      const headingSize = 'text-[15px] font-bold text-slate-900';
+      return `<li>
+        <a href="${href}" class="group/link flex items-center gap-1.5 ${headingSize} hover:text-navy transition">
+          <span>${node.title}</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5 shrink-0 opacity-70 group-hover/link:translate-x-0.5 transition-transform"></i>
+        </a>
+        ${childList}
+      </li>`;
+    }
+
+    // depth >= 1: collapsible groups to avoid long, deeply-nested lists pushing scroll
+    const headingSize = depth === 1 ? 'text-sm font-semibold text-navy' : 'text-sm font-semibold text-slate-700';
+    if (hasChildren) {
+      return `<li class="mt-2">
+        <details class="mega-details">
+          <summary class="cursor-pointer flex items-center gap-1.5 ${headingSize} hover:text-navy transition">
+            <i data-lucide="chevron-right" class="chev-icon w-3.5 h-3.5 shrink-0"></i>
+            <span>${node.title}</span>
+          </summary>
+          ${childList}
+        </details>
+      </li>`;
+    }
+    return `<li class="mt-2">
+      <a href="${href}" class="group/link flex items-center gap-1.5 ${headingSize} hover:text-navy transition">
+        <span>${node.title}</span>
+        <i data-lucide="arrow-right" class="w-3.5 h-3.5 shrink-0 opacity-70 group-hover/link:translate-x-0.5 transition-transform"></i>
+      </a>
+    </li>`;
+  }
+
+  function renderMegaContent(menu) {
+    // Each top-level column gets its own card in the grid (flat menus just have no sub-heading children beyond depth 0)
+    return menu.columns.map(col => `<div>${renderNode(col, 0)}</div>`).join('');
+  }
+
+  // Build desktop nav buttons
+  const navList = document.getElementById('navList');
+  const megaPanel = document.getElementById('megaPanel');
+  const megaTitle = document.getElementById('megaTitle');
+  const megaContent = document.getElementById('megaContent');
+  const closeMegaBtn = document.getElementById('closeMega');
+  const siteHeader = document.getElementById('siteHeader');
+
+  let activeKey = null;
+  let closeTimer = null;
+
+  function cancelCloseTimer() {
+    if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; }
+  }
+
+  function closeMega() {
+    activeKey = null;
+    megaPanel.classList.add('hidden');
+    document.querySelectorAll('.nav-trigger').forEach(btn => {
+      btn.classList.remove('border-white', 'text-white');
+      btn.classList.add('border-transparent');
+      const chev = btn.querySelector('[data-chev]');
+      if (chev) chev.setAttribute('data-lucide', 'chevron-down');
+    });
+    lucide.createIcons();
+  }
+
+  function scheduleClose() {
+    cancelCloseTimer();
+    closeTimer = setTimeout(closeMega, 200);
+  }
+
+  function openMega(menu, btn) {
+    cancelCloseTimer();
+    activeKey = menu.key;
+    megaTitle.innerHTML = `${menu.label} <i data-lucide="arrow-right" class="w-5 h-5"></i>`;
+    megaContent.className = menu.flat
+      ? 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-6'
+      : 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-8';
+    megaContent.innerHTML = renderMegaContent(menu);
+    megaPanel.classList.remove('hidden');
+
+    document.querySelectorAll('.nav-trigger').forEach(b => {
+      const isActive = b === btn;
+      b.classList.toggle('border-white', isActive);
+      b.classList.toggle('border-transparent', !isActive);
+      const chev = b.querySelector('[data-chev]');
+      if (chev) chev.setAttribute('data-lucide', isActive ? 'chevron-up' : 'chevron-down');
+    });
+    lucide.createIcons();
+  }
+
+  menuData.forEach(menu => {
+    const li = document.createElement('li');
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'nav-trigger flex items-center gap-1 px-4 py-[16px] border-b-2 border-transparent text-[14px] font-medium hover:opacity-90 transition';
+    btn.innerHTML = `<span>${menu.label}</span> <i data-lucide="chevron-down" data-chev class="w-3.5 h-3.5"></i>`;
+    btn.addEventListener('mouseenter', () => openMega(menu, btn));
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (activeKey === menu.key) {
+        closeMega();
+      } else {
+        openMega(menu, btn);
+      }
+    });
+    li.appendChild(btn);
+    navList.appendChild(li);
+  });
+
+  // Keep panel open while hovering the trigger row or the panel itself; close shortly after leaving both
+  navList.addEventListener('mouseleave', scheduleClose);
+  navList.addEventListener('mouseenter', cancelCloseTimer);
+  megaPanel.addEventListener('mouseenter', cancelCloseTimer);
+  megaPanel.addEventListener('mouseleave', scheduleClose);
+
+  closeMegaBtn.addEventListener('click', closeMega);
+
+  // Click outside to close mega panel
+  document.addEventListener('click', (e) => {
+    if (activeKey && !e.target.closest('#megaPanel') && !e.target.closest('.nav-trigger')) {
+      closeMega();
+    }
+  });
+
+  // Build mobile nav: full recursive accordion so every nested item is reachable on small screens
+  const mobileNavList = document.getElementById('mobileNavList');
+
+  function renderMobileNode(node, depth) {
+    const padLeft = 24 + depth * 16;
+    if (typeof node === 'string') {
+      return `<li><a href="#" class="block py-2 text-sm text-slate-600 hover:text-navy transition" style="padding-left:${padLeft}px;padding-right:24px;">${node}</a></li>`;
+    }
+    const hasChildren = !!(node.items && node.items.length);
+    if (!hasChildren) {
+      return `<li><a href="${node.href || '#'}" class="block py-2 text-sm text-slate-600 hover:text-navy transition" style="padding-left:${padLeft}px;padding-right:24px;">${node.title}</a></li>`;
+    }
+    const sizeClass = depth === 0 ? 'font-semibold text-slate-800' : 'font-medium text-slate-700';
+    const childItems = node.items.map(c => renderMobileNode(c, depth + 1)).join('');
+    return `<li>
+      <details class="mega-details">
+        <summary class="flex items-center justify-between gap-2 py-2.5 cursor-pointer text-sm ${sizeClass} hover:text-navy transition" style="padding-left:${padLeft}px;padding-right:24px;">
+          <span>${node.title}</span>
+          <i data-lucide="chevron-down" class="chev-icon w-4 h-4 shrink-0"></i>
+        </summary>
+        <ul class="bg-slate-50">${childItems}</ul>
+      </details>
+    </li>`;
+  }
+
+  const quickLinks = [
+    { label: 'Soalan Lazim', img: 'https://picsum.photos/seed/soalan-lazim/32/32' },
+    { label: 'Aduan & Maklumbalas', img: 'https://picsum.photos/seed/aduan-maklumbalas/32/32' },
+    { label: 'Peta Laman', img: 'https://picsum.photos/seed/peta-laman/32/32' },
+    { label: 'Hubungi Kami', img: 'https://picsum.photos/seed/hubungi-kami/32/32' },
+  ];
+
+  let mobileHtml = `
+    <li class="md:hidden bg-slate-50 px-6 py-4">
+      <div class="grid grid-cols-2 gap-3">
+        ${quickLinks.map(q => `
+          <a href="#" class="flex items-center gap-2 text-xs font-medium text-slate-600 hover:text-navy transition">
+            <img src="${q.img}" alt="${q.label}" width="28" height="28" class="w-7 h-7 object-cover rounded shrink-0">
+            <span>${q.label}</span>
+          </a>`).join('')}
+      </div>
+    </li>
+    <li><a href="index.html" class="block px-6 py-3 font-semibold text-slate-800">Utama</a></li>`;
+  menuData.forEach(menu => {
+    const childItems = menu.columns.map(c => renderMobileNode(c, 1)).join('');
+    mobileHtml += `
+      <li>
+        <details class="mega-details">
+          <summary class="flex items-center justify-between gap-2 px-6 py-3 cursor-pointer font-semibold text-slate-800 text-sm hover:text-navy transition">
+            <span>${menu.label}</span>
+            <i data-lucide="chevron-down" class="chev-icon w-4 h-4 shrink-0"></i>
+          </summary>
+          <ul class="bg-slate-50">${childItems}</ul>
+        </details>
+      </li>`;
+  });
+  mobileNavList.innerHTML = mobileHtml;
+  lucide.createIcons();
+
+  // Mobile menu toggle
+  const mobileBtn = document.getElementById('mobileMenuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+  // Search overlay toggle
+  const searchBtn = document.getElementById('searchBtn');
+  const searchOverlay = document.getElementById('searchOverlay');
+  const closeSearch = document.getElementById('closeSearch');
+  searchBtn.addEventListener('click', () => {
+    searchOverlay.classList.toggle('hidden');
+    if (!searchOverlay.classList.contains('hidden')) {
+      lucide.createIcons();
+      searchOverlay.querySelector('input').focus();
+    }
+  });
+  closeSearch.addEventListener('click', () => searchOverlay.classList.add('hidden'));
+
+  // Language switcher
+  const langBtn = document.getElementById('langBtn');
+  const langMenu = document.getElementById('langMenu');
+  const langLabel = document.getElementById('langLabel');
+  langBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    langMenu.classList.toggle('hidden');
+  });
+  langMenu.querySelectorAll('.lang-option').forEach(opt => {
+    opt.addEventListener('click', () => {
+      langLabel.textContent = opt.dataset.lang;
+      langMenu.classList.add('hidden');
+    });
+  });
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('#langBtn') && !e.target.closest('#langMenu')) {
+      langMenu.classList.add('hidden');
+    }
+  });
+
+  /* =========================================================
+     ACCESSIBILITY TOOLS
+  ========================================================= */
+  const accessBtn = document.getElementById('accessBtn');
+  const accessOverlay = document.getElementById('accessOverlay');
+  const accessClose = document.getElementById('accessClose');
+  const accessReset = document.getElementById('accessReset');
+  const accessSliders = document.getElementById('accessSliders');
+
+  accessBtn.addEventListener('click', () => {
+    accessOverlay.classList.remove('hidden');
+    lucide.createIcons();
+  });
+  accessClose.addEventListener('click', () => accessOverlay.classList.add('hidden'));
+  accessOverlay.addEventListener('click', (e) => {
+    if (e.target === accessOverlay) accessOverlay.classList.add('hidden');
+  });
+
+  // Toggle-style tools: apply/remove a class on <html>
+  const toggleClassMap = {
+    'invert': 'a11y-invert',
+    'monochrome': 'a11y-monochrome',
+    'dark-contrast': 'a11y-dark-contrast',
+    'light-contrast': 'a11y-light-contrast',
+    'low-saturation': 'a11y-low-saturation',
+    'high-saturation': 'a11y-high-saturation',
+    'highlight-links': 'a11y-highlight-links',
+    'highlight-headings': 'a11y-highlight-headings',
+    'screen-reader': 'a11y-screen-reader',
+    'read-mode': 'a11y-read-mode',
+  };
+
+  document.querySelectorAll('.access-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const action = btn.dataset.action;
+      const cls = toggleClassMap[action];
+      document.documentElement.classList.toggle(cls);
+      const isActive = document.documentElement.classList.contains(cls);
+      btn.classList.toggle('bg-[#004A99]', isActive);
+      btn.classList.toggle('text-white', isActive);
+      btn.classList.toggle('bg-slate-100', !isActive);
+      btn.classList.toggle('text-slate-700', !isActive);
+    });
+  });
+
+  // Slider-style tools: scale via CSS variables
+  const sliderConfig = [
+    { key: 'scaling', label: 'Content scaling', cssVar: '--a11y-scale' },
+    { key: 'font', label: 'Font size', cssVar: '--a11y-font-scale' },
+    { key: 'line', label: 'Line height', cssVar: '--a11y-line-scale' },
+    { key: 'letter', label: 'Letter spacing', cssVar: '--a11y-letter-scale' },
+  ];
+  const sliderState = {};
+
+  sliderConfig.forEach(cfg => {
+    sliderState[cfg.key] = 100;
+    const row = document.createElement('div');
+    row.className = 'flex items-center gap-3 bg-slate-100 rounded-lg px-4 py-3';
+    row.innerHTML = `
+      <span class="text-sm text-slate-700 w-[90px] shrink-0">${cfg.label}</span>
+      <div class="flex-1 h-1.5 rounded-full bg-slate-300 relative">
+        <div class="slider-fill h-1.5 rounded-full bg-[#004A99]" style="width:50%"></div>
+      </div>
+      <span class="slider-value text-xs text-slate-500 w-9 text-right">100%</span>
+      <button type="button" class="slider-minus w-7 h-7 rounded-md bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:bg-slate-50">−</button>
+      <button type="button" class="slider-plus w-7 h-7 rounded-md bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:bg-slate-50">+</button>
+    `;
+    accessSliders.appendChild(row);
+
+    const fill = row.querySelector('.slider-fill');
+    const valueLabel = row.querySelector('.slider-value');
+    const minBtn = row.querySelector('.slider-minus');
+    const plusBtn = row.querySelector('.slider-plus');
+
+    function applyValue(v) {
+      v = Math.max(70, Math.min(150, v));
+      sliderState[cfg.key] = v;
+      valueLabel.textContent = v + '%';
+      fill.style.width = ((v - 70) / (150 - 70) * 100) + '%';
+      if (cfg.key === 'scaling') {
+        // Scale only the page content, never the sticky header, so sticky/fixed positioning isn't broken
+        const mainEl = document.getElementById('main');
+        if (v === 100) {
+          mainEl.style.transform = '';
+        } else {
+          mainEl.style.transform = `scale(${v / 100})`;
+          mainEl.style.transformOrigin = 'top center';
+        }
+      } else {
+        document.documentElement.style.setProperty(cfg.cssVar, (v / 100));
+      }
+    }
+
+    minBtn.addEventListener('click', () => applyValue(sliderState[cfg.key] - 10));
+    plusBtn.addEventListener('click', () => applyValue(sliderState[cfg.key] + 10));
+    applyValue(100);
+  });
+
+  accessReset.addEventListener('click', () => {
+    Object.values(toggleClassMap).forEach(cls => document.documentElement.classList.remove(cls));
+    document.querySelectorAll('.access-toggle').forEach(btn => {
+      btn.classList.remove('bg-[#004A99]', 'text-white');
+      btn.classList.add('bg-slate-100', 'text-slate-700');
+    });
+    document.getElementById('main').style.transform = '';
+    document.querySelectorAll('#accessSliders > div').forEach((row, i) => {
+      const cfg = sliderConfig[i];
+      sliderState[cfg.key] = 100;
+      row.querySelector('.slider-value').textContent = '100%';
+      row.querySelector('.slider-fill').style.width = '50%';
+      if (cfg.key !== 'scaling') document.documentElement.style.setProperty(cfg.cssVar, 1);
+    });
+  });
+
+  // News data, rendered dynamically
+  const newsImage = 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop';
+  const newsItems = [
+    { date: '12 Jun 2026', title: 'Notis Kenyataan Penyebut Harga Yang Berjaya Mesyuarat Jawatankuasa Sebut Harga IKMa Bil.02/2026', tag: 'Pengumuman' },
+    { date: '01 Mac 2026', title: 'Notis Kenyataan Penyebut Harga Yang Berjaya Mesyuarat Jawatankuasa Sebut Harga IKMa Bil.01/2026', tag: 'Pengumuman' },
+    { date: '12 Dis 2025', title: 'Notis Kenyataan Penyebut Harga Yang Berjaya Mesyuarat Jawatankuasa Sebut Harga IKMa Bil.03/2025', tag: 'Pengumuman' },
+  ];
+
+  const grid = document.getElementById('newsGrid');
+  grid.innerHTML = newsItems.map(item => `
+    <a href="#" class="slider-item shrink-0 w-[78%] sm:w-auto rounded-lg overflow-hidden hover:shadow-md transition block bg-transparent">
+      <div class="h-44 overflow-hidden">
+        <img src="${newsImage}" alt="" class="block w-full h-full object-cover rounded-lg">
+      </div>
+      <div class="p-5">
+        <p class="text-xs text-slate-400 mb-2">${item.date}</p>
+        <h3 class="font-semibold text-slate-900 text-sm leading-snug mb-2">${item.title}</h3>
+        <p class="text-xs text-slate-400">${item.tag}</p>
+      </div>
+    </a>
+  `).join('');
+  lucide.createIcons();
+
+  // Wire up slider prev/next arrow buttons
+  document.querySelectorAll('.slider-wrapper').forEach(wrapper => {
+    const track = wrapper.querySelector('.slider-track');
+    const prevBtn = wrapper.querySelector('.slider-prev');
+    const nextBtn = wrapper.querySelector('.slider-next');
+    if (!track) return;
+    const scrollByAmount = () => {
+      const item = track.querySelector('.slider-item');
+      return item ? item.getBoundingClientRect().width + 20 : track.clientWidth * 0.8;
+    };
+    if (prevBtn) prevBtn.addEventListener('click', () => track.scrollBy({ left: -scrollByAmount(), behavior: 'smooth' }));
+    if (nextBtn) nextBtn.addEventListener('click', () => track.scrollBy({ left: scrollByAmount(), behavior: 'smooth' }));
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "name": "Institut Koperasi Malaysia Laman Web Rasmi",
+  "description": "Laman web rasmi Institut Koperasi Malaysia (IKMa) yang menyediakan latihan, penyelidikan dan khidmat perundingan bagi memperkasa gerakan koperasi Malaysia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
